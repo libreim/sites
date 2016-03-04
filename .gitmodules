@@ -1,0 +1,12 @@
+[submodule "blog"]
+	path = blog
+	url = git@github.com:dgiim/blog.git
+[submodule "awesome"]
+	path = awesome
+	url = git@github.com:dgiim/awesome.git
+[submodule "calendar"]
+	path = calendar
+	url = git@github.com:dgiim/calendar.git
+[submodule "assets"]
+	path = assets
+	url = git@github.com:dgiim/assets.git
