@@ -27,6 +27,6 @@ after_script:
   - |
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
     git add * && \
-    git add . && \
+    git add . --all && \
     git commit -m "`date`" && \
     sshpass -p ${TUX_SSHPASS} git push origin master --quiet
