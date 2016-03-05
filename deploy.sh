@@ -1,5 +1,5 @@
 build() {
-  local defaults=../_config.yml
+  local defaults=../_defaults.yml
   local config=_config.yml
   local tux=_tux.yml
 
