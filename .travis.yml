@@ -25,7 +25,7 @@ script: deploy.sh
 after_script:
   - cd .site/
   - |
-    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && (git ls-files --deleted -z | xargs -0 git rm) && \
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
     git add * && \
     git add . && \
     git commit -m "`date`" && \
