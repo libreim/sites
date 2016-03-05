@@ -3,8 +3,13 @@ language: ruby
 rvm:
  - 2.2.3
 
+git:
+  submodules: false
+
 # Adapted from https://github.com/iblancasa/blog_files/blob/master/.travis.yml
 before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
   - sudo apt-get update
   - sudo apt-get install -y git sshpass
   - |
