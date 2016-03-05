@@ -17,9 +17,9 @@ build() {
 
 deploy_all() {
   local site_path=.site
-  rm $site_path -r
 
   for site in `find *  -maxdepth 0 ! -path '*/.*' ! -path '*/_*' -type d`; do
+    rm $site_path/$site -r
     echo "Entrando en $site"
     cd $site
     build
