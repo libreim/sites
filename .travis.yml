@@ -17,13 +17,13 @@ before_install:
     git config --global user.email "dgiimblog@gmail.com"
     git config --global user.name "dgiimbot"
     echo ${KNOWN_HOST_RSA} >> ~/.ssh/known_hosts
-    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && sshpass -p ${TUX_SSHPASS} git clone -b master ${TUX_SSH_REPO} _site # && rm -rf _site/*
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && sshpass -p ${TUX_SSHPASS} git clone -b master ${TUX_SSH_REPO} .site # && rm -rf _site/*
     chmod u+x deploy.sh
 
 script: deploy.sh
 
 after_script:
-  - cd _site/
+  - cd .site/
   - |
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && (git ls-files --deleted -z | xargs -0 git rm) && \
     git add * && \
