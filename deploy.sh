@@ -6,6 +6,7 @@ build() {
     config=$config,$tux
   fi
 
+  bundle install
   bundle exec jekyll build --config $config
 }
 
