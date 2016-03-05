@@ -1,15 +1,9 @@
 build() {
   local defaults=../_config.yml
   local config=_config.yml
-  local tux=_tux.yml
 
   if [ -f $config ]; then
     config="$defaults,$config"
-
-    if [ -f $tux ]; then
-      config="$config,$tux"
-    fi
-
     bundle install
     bundle exec jekyll build --config $config
   else
@@ -18,7 +12,7 @@ build() {
   fi
 }
 
-deploy_all() {
+build_all() {
   local site_path=.site
 
   for site in `find *  -maxdepth 0 ! -path '*/.*' ! -path '*/_*' -type d`; do
@@ -34,4 +28,11 @@ deploy_all() {
   done
 }
 
-deploy_all
+serve() {
+  cd $1
+  ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'
+  cd ..
+}
+
+build_all
+serve .site
