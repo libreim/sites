@@ -32,6 +32,10 @@ deploy_all() {
     echo "Saliendo de $site"
     cd ..
   done
+
+  if [ -f config.ru ]; then
+    cp config.ru .site/
+  fi
 }
 
 deploy_all
