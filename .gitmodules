@@ -13,3 +13,6 @@
 [submodule "home"]
 	path = home
 	url = git@github.com:dgiim/home.git
+[submodule "foro"]
+	path = foro
+	url = git@github.com:dgiim/foro.git
