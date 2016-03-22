@@ -1,14 +1,15 @@
 build() {
   local defaults=../_config.yml
   local config=_config.yml
+  local destination=../$1/$2
 
+  mkdir -p $destination
   if [ -f $config ]; then
     config="$defaults,$config"
     bundle install
-    bundle exec jekyll build --config $config
+    bundle exec jekyll build --config $config --destination $destination --watch &
   else
-    mkdir -p _site
-    cp * _site -r
+    cp * $destination -r
   fi
 }
 
@@ -19,10 +20,7 @@ build_all() {
     rm $site_path/$site -rf
     echo "Entrando en $site"
     cd $site
-    build
-    mkdir -p ../$site_path/$site
-    mv _site/* ../$site_path/$site
-    rm -rf _site/*
+    build $site_path $site
     echo "Saliendo de $site"
     cd ..
   done
