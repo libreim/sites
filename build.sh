@@ -20,7 +20,11 @@ build_all() {
     rm $site_path/$site -rf
     echo "Entrando en $site"
     cd $site
-    build $site_path $site
+    if [ $site == "home" ]; then
+      build $site_path .
+    else
+      build $site_path $site
+    fi
     echo "Saliendo de $site"
     cd ..
   done

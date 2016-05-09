@@ -22,12 +22,16 @@ deploy_all() {
   local site_path=.site
 
   for site in `find *  -maxdepth 0 ! -path '*/.*' ! -path '*/_*' -type d`; do
-    rm $site_path/$site -rf
     echo "Entrando en $site"
     cd $site
     build
-    mkdir -p ../$site_path/$site
-    mv _site/* ../$site_path/$site
+    if [ $site == "home" ]; then
+      mv _site/* ../$site_path/
+    else
+      rm ../$site_path/$site -rf
+      mkdir -p ../$site_path/$site
+      mv _site/* ../$site_path/$site
+    fi
     rm -rf _site/*
     echo "Saliendo de $site"
     cd ..
