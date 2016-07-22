@@ -1,18 +1,18 @@
 [submodule "blog"]
 	path = blog
-	url = git@github.com:dgiim/blog.git
+	url = git@github.com:libreim/blog.git
 [submodule "awesome"]
 	path = awesome
-	url = git@github.com:dgiim/awesome.git
+	url = git@github.com:libreim/awesome.git
 [submodule "calendar"]
 	path = calendar
-	url = git@github.com:dgiim/calendar.git
+	url = git@github.com:libreim/calendar.git
 [submodule "assets"]
 	path = assets
-	url = git@github.com:dgiim/assets.git
+	url = git@github.com:libreim/assets.git
 [submodule "home"]
 	path = home
-	url = git@github.com:dgiim/home.git
+	url = git@github.com:libreim/home.git
 [submodule "foro"]
 	path = foro
-	url = git@github.com:dgiim/foro.git
+	url = git@github.com:libreim/foro.git
