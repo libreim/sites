@@ -1,4 +1,4 @@
-base_path: /dgiim
-assets_path: /dgiim/assets
+base_path: /libreim
+assets_path: /libreim/assets
 
 exclude: ["vendor","lib", "config.rb", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
