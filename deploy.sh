@@ -6,9 +6,9 @@ build() {
   if [ -f $config ]; then
     config="$defaults,$config"
 
-    if [ -f $tux ]; then
-      config="$config,$tux"
-    fi
+    #if [ -f $tux ]; then
+    #  config="$config,$tux"
+    #fi
 
     bundle install
     bundle exec jekyll build --config $config
